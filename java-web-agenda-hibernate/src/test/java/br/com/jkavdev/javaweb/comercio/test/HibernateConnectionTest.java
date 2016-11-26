@@ -2,7 +2,7 @@ package br.com.jkavdev.javaweb.comercio.test;
 
 import org.junit.Test;
 
-import br.com.jkavdev.javaweb.hibernate.comercio.util.HibernateUtility;
+import br.com.jkavdev.javaweb.agenda.util.HibernateUtility;
 
 public class HibernateConnectionTest {
 

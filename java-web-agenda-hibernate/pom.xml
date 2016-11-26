@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.jkavdev.javaweb.hibernate</groupId>
-	<artifactId>java-web-comercio-hibernate</artifactId>
+	<artifactId>java-web-agenda-hibernate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
