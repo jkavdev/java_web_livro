@@ -6,8 +6,8 @@ import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.jkavdev.javaweb.hibernate.comercio.dao.ContatoDao;
-import br.com.jkavdev.javaweb.hibernate.comercio.modelo.Contato;
+import br.com.jkavdev.javaweb.agenda.dao.ContatoDao;
+import br.com.jkavdev.javaweb.agenda.modelo.Contato;
 
 public class CrudContatoHibernateTest {
 
