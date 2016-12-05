@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Cadastro de usuários</title>
+</h:head>
+
+<h:body>
+	<h2>Cadastro de usuários</h2>
+
+	<h:form>
+	
+		<h:messages />
+
+		<h:dataTable value="#{usuarioController.lista}" var="usuario" rules="row" cellpedding="5">
+
+			<f:facet name="caption">A lista a seguir exibe a relação de todos os usuários</f:facet>
+			<f:facet name="header">Listagem de usuários</f:facet>
+			<f:facet name="footer">Final da Listagem</f:facet>
+
+			<h:column>
+				<h:commandLink action="#{usuarioController.ativar}">
+					<h:graphicImage library="imagens" name="usuario_ativo_#{usuario.ativo}.png" style="border:none" />
+					<f:setPropertyActionListener target="#{usuarioController.usuario}" value="#{usuario}" />
+				</h:commandLink>
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				#{usuario.codigo}	
+			</h:column>
+
+			<h:column>
+				<h:graphicImage library="imagens" name="bandeira_#{usuario.idioma}.png" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{usuario.nome}	
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">E-mail</f:facet>
+				<a href="mailto:#{usuario.email}">#{usuario.email}</a>
+			</h:column>
+
+			<h:column>
+				<h:commandLink action="#{usuarioController.editarUsuario}">
+					<h:graphicImage library="imagens" name="editar16.png" style="border:none" />
+					<f:setPropertyActionListener target="#{usuarioController.usuario}" value="#{usuario}" />
+					<f:setPropertyActionListener target="#{usuarioController.destinoSalvar}" value="/admin/principal" />
+				</h:commandLink>
+			</h:column>
+
+			<h:column>
+				<h:commandLink action="#{usuarioController.excluirUsuario}" onclick="if(!confirm('Deseja excluir')) return false;">
+					<h:graphicImage library="imagens" name="excluir16.png" style="border:none" />
+					<f:setPropertyActionListener target="#{usuarioController.usuario}" value="#{usuario}" />
+				</h:commandLink>
+			</h:column>
+
+		</h:dataTable>
+
+	</h:form>
+</h:body>
+</html>
